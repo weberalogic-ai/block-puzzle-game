@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="A modern, responsive Block Puzzle Game by Weberalogic.">
+  <title>Block Puzzle — Weberalogic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">WEBERALOGIC</p>
+        <h1>Block Puzzle</h1>
+      </div>
+      <button id="newGameBtn" class="icon-btn" type="button" aria-label="Start a new game">↻</button>
+    </header>
+
+    <section class="stats" aria-label="Game statistics">
+      <div class="stat"><span>Score</span><strong id="score">0</strong></div>
+      <div class="stat"><span>Best</span><strong id="best">0</strong></div>
+    </section>
+
+    <section class="game-card">
+      <div id="board" class="board" role="grid" aria-label="Puzzle board"></div>
+      <div id="message" class="message hidden" role="status">
+        <div class="message-box">
+          <span class="game-over-icon">✦</span>
+          <h2>Game Over</h2>
+          <p>Your score: <strong id="finalScore">0</strong></p>
+          <button id="playAgainBtn" class="primary-btn" type="button">Play Again</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pieces-panel">
+      <div class="panel-heading">
+        <h2>Choose a block</h2>
+        <span>Drag or tap</span>
+      </div>
+      <div id="pieces" class="pieces" aria-label="Available blocks"></div>
+    </section>
+
+    <p class="hint">Fill rows, columns, or both to clear them. Keep placing blocks to beat your best score.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
