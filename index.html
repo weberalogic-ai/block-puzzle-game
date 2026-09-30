@@ -2,14 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#07111f"><meta name="description" content="Play Weberalogic Block Puzzle online.">
+<meta name="theme-color" content="#090b20"><meta name="description" content="Weberalogic Block Puzzle — colorful mobile puzzle game.">
 <title>Block Puzzle — Weberalogic</title><link rel="stylesheet" href="style.css">
 </head>
-<body><main class="app">
-<header class="topbar"><div><p class="eyebrow">WEBERALOGIC</p><h1>Block Puzzle</h1></div><button id="newGameBtn" class="icon-btn" type="button">↻</button></header>
-<section class="stats"><div class="stat"><span>SCORE</span><strong id="score">0</strong></div><div class="stat"><span>BEST</span><strong id="best">0</strong></div></section>
-<section class="game-card"><div class="board-title"><strong>10 × 10 BOARD</strong><span id="statusText">Choose a block below</span></div><div id="board" class="board" role="grid"></div>
-<div id="message" class="message hidden" role="status"><div class="message-box"><span class="game-over-icon">✦</span><h2>Game Over</h2><p>Your score: <strong id="finalScore">0</strong></p><button id="playAgainBtn" class="primary-btn" type="button">Play Again</button></div></div></section>
-<section class="pieces-panel"><div class="panel-heading"><h2>Your puzzle blocks</h2><span>Tap a block → place it</span></div><div id="pieces" class="pieces"></div></section>
-<p class="hint">Complete a row or column to clear it. Use all 3 blocks to get 3 new blocks.</p>
-</main><script src="script.js"></script></body></html>
+<body>
+<main class="app">
+<section id="homeScreen" class="screen home-screen">
+  <div class="brand"><div class="brand-mark">◆</div><p>WEBERALOGIC</p></div>
+  <div class="hero">
+    <div class="floating f1">✦</div><div class="floating f2">●</div><div class="floating f3">◆</div>
+    <h1>BLOCK<br><span>PUZZLE</span></h1><p>Relax • Match • Clear • Win</p>
+  </div>
+  <div class="home-stats"><div><span>BEST</span><b id="homeBest">0</b></div><div><span>COINS</span><b id="homeCoins">0</b> 🪙</div><div><span>LEVEL</span><b id="homeLevel">1</b></div></div>
+  <button id="playBtn" class="main-btn" type="button">PLAY NOW <span>▶</span></button>
+  <button id="dailyBtn" class="daily-card" type="button"><span class="daily-icon">🎯</span><span><b>DAILY CHALLENGE</b><small id="dailyText">Complete today's target</small></span><strong>›</strong></button>
+  <p class="tiny">No account • Progress saved on this device</p>
+</section>
+
+<section id="gameScreen" class="screen game-screen hidden">
+<header class="game-top"><button id="homeBtn" class="round-btn" type="button" aria-label="Home">⌂</button><div class="level-pill">LEVEL <b id="level">1</b><span id="levelProgress">0/500</span></div><div class="top-actions"><div class="coin-pill">🪙 <b id="coins">0</b></div><button id="pauseBtn" class="round-btn" type="button">Ⅱ</button></div></header>
+<div class="score-row"><div><small>SCORE</small><strong id="score">0</strong></div><div class="combo" id="combo">COMBO ×1</div><div><small>BEST</small><strong id="best">0</strong></div></div>
+<section class="board-card"><div class="board-title"><span>10 × 10</span><span id="statusText">Choose a block</span></div><div id="board" class="board" role="grid"></div></section>
+<section class="pieces-panel"><div class="panel-heading"><h2>Your Blocks</h2><span>Tap to select</span></div><div id="pieces" class="pieces"></div></section>
+<p class="hint">Complete rows or columns to clear them. Clear more at once for bonus coins.</p>
+</section>
+
+<div id="pauseModal" class="modal hidden"><div class="modal-card"><span class="modal-icon">Ⅱ</span><h2>Game Paused</h2><p>Take a breath. Your game is safe.</p><button id="resumeBtn" class="main-btn" type="button">RESUME</button><button id="restartBtn" class="text-btn" type="button">Restart Game</button></div></div>
+<div id="gameOverModal" class="modal hidden"><div class="modal-card"><span class="modal-icon">✦</span><h2>Great Run!</h2><p>Score <b id="finalScore">0</b> • Coins earned <b id="earnedCoins">0</b></p><button id="againBtn" class="main-btn" type="button">PLAY AGAIN</button><button id="overHomeBtn" class="text-btn" type="button">Home</button></div></div>
+</main><script src="script.js"></script>
+</body></html>
